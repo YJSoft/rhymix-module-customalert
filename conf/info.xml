@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="ko">Custom Alert</title>
+	<description xml:lang="ko">Alert design change module</description>
+	<version>0.1</version>
+	<date>2017-11-13</date>
+	<author email_address="yjsoft@yjsoft.pe.kr" link="https://yjsoft.pe.kr">
+		<name xml:lang="ko">YJSoft</name>
+	</author>
+</module>

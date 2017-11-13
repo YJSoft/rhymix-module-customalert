@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions />
+	<actions>
+        <action name="dispCustomalertAdminConfig" type="view" admin_index="true" menu_name="menu_customalert" menu_index="true" />
+        <action name="dispCustomalertAdminTabEx" type="view" />
+        <action name="procCustomalertAdminInsertConfig" type="controller" />
+    </actions>
+    <menus>
+        <menu name="menu_customalert" type="all">
+            <title xml:lang="ko">Custom Alert</title>
+            <title xml:lang="en">Custom Alert</title>
+        </menu>
+    </menus>
+</module>
