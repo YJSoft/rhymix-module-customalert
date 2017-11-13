@@ -15,7 +15,7 @@
 					<option value="{$key}" <!--@if($config->skin == $key)-->selected="selected"<!--@end-->>{$val->title} ({htmlspecialchars($key, ENT_COMPAT | ENT_HTML401, 'UTF-8', false)})</option>
 					<!--@end-->
 				</select>
-				<p class="x_help-block">사용할 스킨을 선택해주세요.</p>
+				<p class="x_help-block">{$skin_info}</p>
 			</div>
 		</div>
 		<div class="x_control-group">

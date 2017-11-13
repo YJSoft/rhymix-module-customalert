@@ -18,11 +18,30 @@ class customalertAdminView extends customalert
 		$skin_list = $oModuleModel->getSkins($this->module_path);
 		Context::set('skin_list', $skin_list);
 
-		// If skin is not set, use default
+		// If skin is not exist or not set, use default
 		if(!$skin_list[$config->skin]) $config->skin = "default";
 
+		$skin_info = $skin_list[$config->skin];
+
 		// Set the skin colorset once the configurations is completed
-		Context::set('colorset_list', $skin_list[$config->skin]->colorset);
+		Context::set('colorset_list', $skin_info->colorset);
+		
+		if(count($skin_info->author) == 0) {
+			$author = "Unknown";
+		} else {
+			for($i=0;$i<count($skin_info->author);$i++)
+			{
+				if(isset($skin_info->author[$i]->homepage) && $skin_info->author[$i]->homepage != "") {
+					$author[] = sprintf('<a href="%s">%s</a>', htmlspecialchars($skin_info->author[$i]->homepage, ENT_COMPAT | ENT_HTML401, 'UTF-8', false), htmlspecialchars($skin_info->author[$i]->name, ENT_COMPAT | ENT_HTML401, 'UTF-8', false));
+				} else {
+					$author[] = sprintf('%s', htmlspecialchars($skin_info->author[$i]->name, ENT_COMPAT | ENT_HTML401, 'UTF-8', false));
+				}
+				
+				$author = implode(", ",$author);
+			}
+		}
+		
+		Context::set('skin_info',htmlspecialchars($skin_info->description, ENT_COMPAT | ENT_HTML401, 'UTF-8', false) . "<br />By  " . $author);
 
 		$security = new Security();
 		$security->encodeHTML('config..');
