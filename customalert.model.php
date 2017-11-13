@@ -29,5 +29,6 @@ class customalertModel extends customalert
 		}
 		if(count($colorset_list)) $colorsets = implode("\n", $colorset_list);
 		$this->add('colorset_list', $colorsets);
+		$this->add('skin_info',$skin_info);
 	}
 }
