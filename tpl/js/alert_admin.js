@@ -13,11 +13,10 @@ function doDisplaySkinColorset(sel, colorset) {
 /* 서버에서 받아온 컬러셋을 표시 */
 function completeGetSkinColorset(ret_obj, response_tags, params, fo_obj) {
     var sel = get_by_id("fo_customalert").alert_colorset;
+    var skin_info = get_by_id("skin_info");
     var length = sel.options.length;
     var selected_colorset = params["colorset"];
     for(var i=0;i<length;i++) sel.remove(0);
-
-    console.log(ret_obj);
 
     var colorset_list = ret_obj["colorset_list"].split("\n");
     var selected_index = 0;
@@ -29,4 +28,5 @@ function completeGetSkinColorset(ret_obj, response_tags, params, fo_obj) {
     }
 
     sel.selectedIndex = selected_index;
+    skin_info.innerHTML = ret_obj["skin_info"];
 }
