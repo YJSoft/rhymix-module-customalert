@@ -41,8 +41,8 @@ class customalertModel extends customalert
 			
 			$author = implode(", ",$author);
 		}
-		
+
 		$this->add('colorset_list', $colorsets);
-		$this->add('skin_info',$skin_info->title . "<br />제작자 : " . $author);
+		$this->add('skin_info',$skin_info->title . "<br />제작자 : " . print_r($skin_info->author,TRUE));
 	}
 }
