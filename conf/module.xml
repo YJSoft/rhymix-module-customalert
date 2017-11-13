@@ -3,8 +3,8 @@
 	<grants />
 	<permissions />
 	<actions>
+        <action name="getCustomalertGetColorsetList" type="model" />
         <action name="dispCustomalertAdminConfig" type="view" admin_index="true" menu_name="menu_customalert" menu_index="true" />
-        <action name="dispCustomalertAdminTabEx" type="view" />
         <action name="procCustomalertAdminInsertConfig" type="controller" />
     </actions>
     <menus>
