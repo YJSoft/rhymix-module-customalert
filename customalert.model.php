@@ -29,16 +29,19 @@ class customalertModel extends customalert
 		}
 		if(count($colorset_list)) $colorsets = implode("\n", $colorset_list);
 
+		$author = "Unknown";
+
 		for($i=0;$i<count($skin_info->author->item);$i++)
 		{
-			if(isset($skin_info->author->item[$i]->homepage) && $skin_info->author->item[$i]->homepage != "") {
-				$author[] = sprintf('<a href="%s">%s</a>', $skin_info->author->item[$i]->homepage, $skin_info->author->item[$i]->name);
+			if(isset($skin_info->author[$i]->homepage) && $skin_info->author[$i]->homepage != "") {
+				$author[] = sprintf('<a href="%s">%s</a>', $skin_info->author[$i]->homepage, $skin_info->author[$i]->name);
 			} else {
-				$author[] = sprintf('%s', $skin_info->author->item[$i]->name);
+				$author[] = sprintf('%s', $skin_info->author[$i]->name);
 			}
 			
 			$author = implode(", ",$author);
 		}
+		
 		$this->add('colorset_list', $colorsets);
 		$this->add('skin_info',$skin_info->title . "<br />제작자 : " . $author);
 	}
