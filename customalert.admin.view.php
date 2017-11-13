@@ -9,6 +9,7 @@ class customalertAdminView extends customalert
 
 	function dispCustomalertAdminConfig()
 	{
+		$oModuleModel = getModel('module');
 		$oCustomalertModel = getModel('customalert');
 		$module_config = $oCustomalertModel->getConfig();
 		Context::set('config', $module_config);
