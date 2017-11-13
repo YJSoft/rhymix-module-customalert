@@ -31,7 +31,7 @@ class customalertModel extends customalert
 
 		$author = "Unknown";
 
-		for($i=0;$i<count($skin_info->author->item);$i++)
+		for($i=0;$i<count($skin_info->author);$i++)
 		{
 			if(isset($skin_info->author[$i]->homepage) && $skin_info->author[$i]->homepage != "") {
 				$author[] = sprintf('<a href="%s">%s</a>', $skin_info->author[$i]->homepage, $skin_info->author[$i]->name);
@@ -41,8 +41,8 @@ class customalertModel extends customalert
 			
 			$author = implode(", ",$author);
 		}
-
+		
 		$this->add('colorset_list', $colorsets);
-		$this->add('skin_info',$skin_info->title . "<br />제작자 : " . print_r($skin_info->author,TRUE));
+		$this->add('skin_info',$skin_info->title . "<br />제작자 : " . $author);
 	}
 }
