@@ -5,7 +5,7 @@ function doDisplaySkinColorset(sel, colorset) {
     params["skin"] = skin;
     params["colorset"] = colorset;
 
-    var response_tags = new Array("error","message","colorset_list");
+    var response_tags = new Array("error","message","colorset_list","skin_info");
 
     exec_xml("customalert", "getCustomalertGetColorsetList", params, completeGetSkinColorset, response_tags, params);
 }
