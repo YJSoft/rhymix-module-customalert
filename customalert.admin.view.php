@@ -10,6 +10,12 @@ class customalertAdminView extends customalert
 	function dispCustomalertAdminConfig()
 	{
 		$oModuleModel = getModel('module');
+		
+		$module_info = $oModuleModel->getModuleInfoByMid('customalert_module_2fa');
+		if(!$module_info->module_srl) {
+			return new Object(1,'need_to_install_module_first');
+		}
+
 		$oCustomalertModel = getModel('customalert');
 		$module_config = $oCustomalertModel->getConfig();
 		Context::set('config', $module_config);
@@ -25,6 +31,8 @@ class customalertAdminView extends customalert
 
 		// Set the skin colorset once the configurations is completed
 		Context::set('colorset_list', $skin_info->colorset);
+		
+		Context::set('module_srl', $module_info->module_srl);
 		
 		if(count($skin_info->author) == 0) {
 			$author = "Unknown";
@@ -47,6 +55,7 @@ class customalertAdminView extends customalert
 		$security->encodeHTML('config..');
 		$security->encodeHTML('skin_list..title');
 		$security->encodeHTML('colorset_list..name','colorset_list..title');
+		$security->encodeHTML('module_srl');
 	}
 
 	/**
