@@ -3,4 +3,20 @@
 	<item name="customalert">
 		<value xml:lang="ko"><![CDATA[Custom Alert]]></value>
 	</item>
+    <item name="do_not_delete_this_mid_or_modify_please">
+        <value xml:lang="en"><![CDATA[If you delete or modify this mid, Custom alert module will not work properly!]]></value>
+		<value xml:lang="ko"><![CDATA[이 MID를 삭제하거나 변경하면 Custom Alert 모듈이 정상동작 하지 않을 수 있습니다!]]></value>
+	</item>
+    <item name="already_installed_or_mid_duplicate">
+        <value xml:lang="en"><![CDATA[Module is already installed or mid name customalert_module_2fa is duplicated.]]></value>
+		<value xml:lang="ko"><![CDATA[모듈이 이미 설치되어 있거나 customalert_module_2fa mid가 이미 존재합니다.]]></value>
+	</item>
+    <item name="customalert_config">
+        <value xml:lang="en"><![CDATA[Base config]]></value>
+		<value xml:lang="ko"><![CDATA[기본 설정]]></value>
+	</item>
+    <item name="customalert_skin_config">
+        <value xml:lang="en"><![CDATA[Skin config]]></value>
+		<value xml:lang="ko"><![CDATA[스킨 설정]]></value>
+	</item>
 </lang>
