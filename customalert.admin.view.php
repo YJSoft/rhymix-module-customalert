@@ -48,4 +48,21 @@ class customalertAdminView extends customalert
 		$security->encodeHTML('skin_list..title');
 		$security->encodeHTML('colorset_list..name','colorset_list..title');
 	}
+
+	/**
+	 * Display skin setting page
+	 */
+	function dispCustomalertAdminSkinInfo()
+	{
+		$oModuleAdminModel = getAdminModel('module');
+		$oModuleModel = getModel('module');
+		
+		$module_info = $oModuleModel->getModuleInfoByMid('customalert_module_2fa');
+		if(!$module_info->module_srl) {
+			return new Object(1,'need_to_install_module_first');
+		}
+		$skin_content = $oModuleAdminModel->getModuleSkinHTML($module_info->module_srl);
+		Context::set('skin_content', $skin_content);
+		$this->setTemplateFile('skin_info');
+	}
 }
