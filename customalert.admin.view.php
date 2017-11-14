@@ -18,7 +18,7 @@ class customalertAdminView extends customalert
 
 		$oCustomalertModel = getModel('customalert');
 		$module_config = $oCustomalertModel->getConfig();
-		Context::set('config', $module_config);
+		Context::set('config', $module_info);
 
 		// Get the skin information
 		$skin_list = $oModuleModel->getSkins($this->module_path);
