@@ -7,6 +7,7 @@
         <action name="dispCustomalertAdminConfig" type="view" admin_index="true" menu_name="menu_customalert" menu_index="true" />
         <action name="procCustomalertAdminInsertConfig" type="controller" />
         <action name="dispCustomalertAdminSkinInfo" type="view" />
+        <action name="dispCustomalert2fa" type="view" standalone="true" index="true" />
     </actions>
     <menus>
         <menu name="menu_customalert" type="all">
