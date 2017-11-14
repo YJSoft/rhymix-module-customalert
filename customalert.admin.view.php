@@ -25,13 +25,13 @@ class customalertAdminView extends customalert
 		Context::set('skin_list', $skin_list);
 
 		// If skin is not exist or not set, use default
-		if(!$skin_list[$config->skin]) $config->skin = "default";
+		if(!$skin_list[$module_info->skin]) $config->skin = "default";
 
-		$skin_info = $skin_list[$config->skin];
+		$skin_info = $skin_list[$module_info->skin];
 
 		// Set the skin colorset once the configurations is completed
 		Context::set('colorset_list', $skin_info->colorset);
-		
+
 		Context::set('module_srl', $module_info->module_srl);
 		
 		if(count($skin_info->author) == 0) {
