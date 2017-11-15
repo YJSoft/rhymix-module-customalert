@@ -18,8 +18,10 @@ class customalertView extends customalert
 	function dispCustomalert2fa() {
 		$oModuleModel = getModel('module');
 		$module_info = $oModuleModel->getModuleInfoByModuleSrl('customalert_module_2fa'); //
-		$extra_vars = $oModuleModel->getModuleExtraVars($module_info->module_srl);
-		Context::set('module_info', $extra_vars);
+		$module_info = $oModuleModel->addModuleExtraVars($module_info);
+		$skin_config = $oModuleModel->getModuleSkinVars($module_info->module_srl);
+		Context::set('module_info', $module_info);
+		Context::set('skin_config', $skin_config);
 
 		$this->setTemplateFile('alert');
 	}
