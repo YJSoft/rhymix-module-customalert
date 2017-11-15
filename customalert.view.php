@@ -3,6 +3,7 @@ class customalertView extends customalert
 {
 	function init()
 	{
+		$oModuleModel = getModel('module');
 		$module_info = $oModuleModel->getModuleInfoByMid('customalert_module_2fa');
 
 		$template_path = sprintf("%sskins/%s/",$this->module_path, $module_info->skin);
