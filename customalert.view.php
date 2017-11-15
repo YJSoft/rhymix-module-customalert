@@ -3,9 +3,18 @@ class customalertView extends customalert
 {
 	function init()
 	{
+		$module_info = $oModuleModel->getModuleInfoByMid('customalert_module_2fa');
+
+		$template_path = sprintf("%sskins/%s/",$this->module_path, $module_info->skin);
+		if(!is_dir($template_path)||!$module_info->skin)
+		{
+			$this->module_info->skin = 'default';
+			$template_path = sprintf("%sskins/%s/",$this->module_path, $module_info->skin);
+		}
+		$this->setTemplatePath($template_path);
 	}
 
 	function dispCustomalert2fa() {
-		return new Object(-1,"do_not_delete_this_mid_or_modify_please");
+		$this->setTemplateFile('alert');
 	}
 }

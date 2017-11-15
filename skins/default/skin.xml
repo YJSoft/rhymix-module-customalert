@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin version="0.2">
-    <title xml:lang="ko">Alertify 모달</title>
-    <title xml:lang="en">Alertify Modal</title>
-    <description xml:lang="ko">Alertify 모달을 사용하는 Alert 스킨입니다.</description>
+    <title xml:lang="ko">Alertify</title>
+    <title xml:lang="en">Alertify</title>
+    <description xml:lang="ko">Alertify를 사용하는 Alert 스킨입니다.</description>
     <description xml:lang="en">Alert skin using Alertify.</description>
     <version>1.0</version>
     <date>2017-11-13</date>
@@ -24,46 +24,35 @@
     </colorset>
 
     <extra_vars>
-		<var name="display_title" type="radio" default="show">
-			<title xml:lang="ko">제목표시</title>
-			<title xml:lang="en">Display title</title>
-			<title xml:lang="jp">タイトル表示</title>
+		<var name="do_not_wait" type="radio" default="wait">
+			<title xml:lang="ko">alert 대기</title>
+			<title xml:lang="en">Wait for alert</title>
 			<description xml:lang="ko">
-				문서의 제목을 표시 할지 결정합니다.
+				Alert창이 닫히는 것을 대기할지 여부를 설정합니다. 기본적으로 대기하며 AJAX 등으로 사이트를 구성한 경우 대기 안함으로 선택하는 것이 좋습니다.
 			</description>
-			<description xml:lang="jp">
-				ドキュメントのタイトルの表示可否を決定します。
-			</description>
-			<options value="show">
-				<title xml:lang="ko">출력</title>
-				<title xml:lang="en">Show</title>
-				<title xml:lang="jp">表示</title>
+			<options value="wait">
+				<title xml:lang="ko">대기</title>
+				<title xml:lang="en">Wait</title>
 			</options>
-			<options value="hide">
-				<title xml:lang="ko">출력하지 않음</title>
-				<title xml:lang="en">Hide</title>
-				<title xml:lang="jp">非表示</title>
+			<options value="not_wait">
+				<title xml:lang="ko">대기 안함</title>
+				<title xml:lang="en">Not wait</title>
 			</options>
 		</var>
-		<var name="display_popupmenu" type="radio" default="show">
-			<title xml:lang="ko">팝업메뉴 표시</title>
-			<title xml:lang="en">Display popup menu</title>
+		<var name="use_modal" type="radio" default="modal">
+			<title xml:lang="ko">모달 창 사용</title>
+			<title xml:lang="en">Use modal</title>
 			<title xml:lang="jp">ポップアップメニュー表示</title>
 			<description xml:lang="ko">
 				문서 하단의 팝업 메뉴를 표시 할지 선택합니다.
 			</description>
-			<description xml:lang="jp">
-				ドキュメント下段のポップアップメニューの表示可否を選択します。
-			</description>
-			<options value="show">
-				<title xml:lang="ko">출력</title>
-				<title xml:lang="en">Show</title>
-				<title xml:lang="jp">表示</title>
+			<options value="modal">
+				<title xml:lang="ko">모든 alert창에 사용</title>
+				<title xml:lang="en">Use all alert</title>
 			</options>
-			<options value="hide">
-				<title xml:lang="ko">출력하지 않음</title>
-				<title xml:lang="en">Hide</title>
-				<title xml:lang="jp">非表示</title>
+			<options value="prompt">
+				<title xml:lang="ko">prompt만 사용</title>
+				<title xml:lang="en">Use only prompt</title>
 			</options>
 		</var>
 	</extra_vars>
